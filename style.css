@@ -1,0 +1,258 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #1f1f1f;
+  color: #fafafa;
+  font-family: "Inter", "Poppins", sans-serif;
+  line-height: 1.7;
+  padding-bottom: 5rem;
+}
+
+.welcome {
+  height: 100vh; /* plein écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #2e2e2e, #1f1f1f);
+  color: #fff;
+  padding: 0 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Texte */
+.welcome h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  animation: fadeSlideDown 1.2s ease forwards;
+  opacity: 0;
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeSlideUp 1.2s 0.5s ease forwards;
+}
+
+/* Bouton */
+.btn-welcome {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #ca005e;
+  box-shadow: 0 0 15px rgba(202,0,94,0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-welcome:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 25px rgba(202,0,94,0.7);
+}
+
+/* Animations */
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.1rem 6%;
+  background: rgba(30, 30, 30, 0.75);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.davonLogo {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* lien des navs */
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2.2rem;
+}
+
+.navLinks li a {
+  position: relative;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.navLinks li a:hover {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.55);
+}
+
+/*sous ligne*/
+.navLinks li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  background: linear-gradient(90deg, #ff4d9f, #ffffff);
+  border-radius: 6px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 0 10px #ff3b8d80, 0 0 14px #ffffff40;
+}
+
+.navLinks li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Discord icon */
+.discordLink a img {
+  height: 2rem;
+  width: 2rem;
+  filter: invert(0.7) drop-shadow(0 0 0 transparent);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.discordLink a img:hover {
+  filter: invert(1) drop-shadow(0 0 3px #fff);
+}
+
+
+.discordLink {
+  position: relative;
+}
+
+.discordLink .tooltip {
+  position: absolute;
+  bottom: -2.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.discordLink:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+section {
+  width: min(1100px, 90%);
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+.crackContainer{
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #2a2a2a;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+}
+section h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+section h2 {
+  font-size: 1.6rem;
+  margin: 1.2rem 0 0.5rem;
+  opacity: 0.9;
+}
+
+
+p {
+  margin-bottom: 0.8rem;
+  opacity: 0.85;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.crackLinks {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  color: #ffffffc4;
+  text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  transition: 0.25s ease;
+}
+
+.crackLinks:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+  padding-left: 0.8rem;
+  box-shadow: 0 0 10px #ffffff2a;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+
+@media (max-width: 600px) {
+  section {
+    padding: 1.4rem;
+  }
+
+  section h1 {
+    font-size: 1.8rem;
+  }
+
+  section h2 {
+    font-size: 1.3rem;
+  }
+}
